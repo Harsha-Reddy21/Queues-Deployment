@@ -1,9 +1,5 @@
 from fastapi import FastAPI
-import models, database
-from routes import router
+from routes_advanced import router_adv
 
-# Create tables
-models.Base.metadata.create_all(bind=database.engine)
-
-app = FastAPI(title="Zomato-like with Celery")
-app.include_router(router)
+app = FastAPI(title="Queues-Deployment V2")
+app.include_router(router_adv)
